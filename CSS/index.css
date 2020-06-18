@@ -55,8 +55,16 @@ nav ul li a:hover {
   justify-content: center;
 }
 .title h2 {
-  margin-top: 0;
+  margin-top: 5.5rem;
   color: #F1F3F2;
+  width: 50%;
+  font-size: 4rem;
+  /* border: red solid 1px;  */
+  text-align: center;
+}
+.title h2 span {
+  font-style: italic;
+  font-weight: bolder;
 }
 .intro-text {
   width: 45%;
