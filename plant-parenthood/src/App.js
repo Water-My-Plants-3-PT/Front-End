@@ -4,9 +4,11 @@ import LogIn from "./components/logIn";
 import Home from "./components/home";
 import About from "./components/about";
 import SignUp from "./components/signUp";
+import UserPlants from "./components/userPlants";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
+
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
           <button>
             <Link to="/store">Log In</Link>
           </button>
+          <button>
+            <Link to="/user-plants">User Plants</Link>
+          </button>
         </nav>
           <h1>Welcome to Plant Parenthood 🌱💦🌷</h1>
         <Switch>
@@ -40,6 +45,9 @@ function App() {
           </Route>
           <Route exact path="/store">
             <LogIn />
+          </Route>
+          <Route exact path="/user-plants">
+            <UserPlants />
           </Route>
         </Switch>
       </Router>
