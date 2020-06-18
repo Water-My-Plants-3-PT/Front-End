@@ -19,7 +19,7 @@ header h1 {
   padding-left: 1rem;
   width: 30%;
   /* border: red solid 1px;  */
-  margin-top: 1rem;
+  margin: 1rem 0 0.75rem 0;
 }
 nav {
   border: blue 1px solid;
