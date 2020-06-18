@@ -7,4 +7,5 @@ function UserPlants() {
     </div>
   );
 }
+
 export default UserPlants;
