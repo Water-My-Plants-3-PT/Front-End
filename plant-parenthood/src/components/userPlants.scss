@@ -1,0 +1,63 @@
+@mixin button {
+    background-color: #235B2D;
+    color: #FFFFFF;
+    border: #235B2D solid 2px ;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 35px;
+    padding-right: 35px;
+    
+}
+
+.userPlants{
+    display: flex;
+    margin: auto 0%;
+    justify-content: center;
+
+    .userSec{
+   background-color: #C4C4C4;
+   width: 80%;
+   padding: 10px;
+   padding-left: 20px;
+   padding-right: 20px;
+
+    
+        .plantsNav{
+            display: flex;
+            margin: auto 0%;
+            justify-content: space-between;
+
+            .select{
+                width: 30%;
+            }
+            button{
+                @include button();
+                width: 20%;
+            }
+
+        }
+        .plantSelect{
+            display: flex;
+            margin: auto 0%;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+            .planCard{
+                background-color: green;
+                width: 17%;
+                padding: 5px;
+                margin: 5px;
+                p{
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                }
+                .plantImg{
+                    width: 90%;
+                    border-radius: 5px;
+                }
+            }
+
+        }
+    }
+}
