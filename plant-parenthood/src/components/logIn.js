@@ -4,6 +4,7 @@ import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 
 export default function LogIn() {
 
+  //create initial state for for both entry blocks
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
