@@ -4,9 +4,11 @@ import LogIn from "./components/logIn";
 import Home from "./components/home";
 import About from "./components/about";
 import SignUp from "./components/signUp";
+import UserPlants from "./components/userPlants";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
+
 
 function App() {
   return (
@@ -14,18 +16,27 @@ function App() {
       
       <Router>
         <nav>
-          <button>
-            <Link to="/">Home</Link>
-          </button>
-          <button>
-            <Link to="/about">About</Link>
-          </button>
-          <button>
-            <Link to="/sign-up">Sign Up</Link>
-          </button>
-          <button>
-            <Link to="/store">Log In</Link>
-          </button>
+          <section className="sec-1">
+            <a>
+              <Link to="/" className="link">Home</Link>
+            </a>
+            <a>
+              <Link to="/about" className="link">About</Link>
+            </a>
+          </section>
+
+          <section className="sec-2">
+            <a>
+              <Link to="/sign-up" className="link">Sign Up</Link>
+            </a>
+            <a>
+              <Link to="/store" className="link">Log In</Link>
+            </a>
+            <a>
+              <Link to="/user-plants" className="link">User Plants</Link>
+            </a>
+          </section>
+
         </nav>
           <h1>Welcome to Plant Parenthood 🌱💦🌷</h1>
         <Switch>
@@ -40,6 +51,9 @@ function App() {
           </Route>
           <Route exact path="/store">
             <LogIn />
+          </Route>
+          <Route exact path="/user-plants">
+            <UserPlants />
           </Route>
         </Switch>
       </Router>
