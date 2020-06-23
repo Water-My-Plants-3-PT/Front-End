@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-// import "./Login.css";
+import "./less/index.less";
 
 export default function LogIn() {
 
@@ -18,7 +18,7 @@ export default function LogIn() {
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" basSize="large">
+        <FormGroup controlId="email" basSize="large" style={{padding:'20px'},{margin: '0 auto'}}>
           <FormLabel>Email</FormLabel>
           <FormControl 
           autoFocustype="email"
