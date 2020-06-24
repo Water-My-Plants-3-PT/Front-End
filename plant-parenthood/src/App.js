@@ -30,7 +30,7 @@ function App() {
               <Link to="/sign-up" className="link">Sign Up</Link>
             </a>
             <a>
-              <Link to="/store" className="link">Log In</Link>
+              <Link to="/login" className="link">Log In</Link>
             </a>
             <a>
               <Link to="/user-plants" className="link">User Plants</Link>
@@ -38,7 +38,7 @@ function App() {
           </section>
 
         </nav>
-          <h1>Welcome to Plant Parenthood 🌱💦🌷</h1>
+
         <Switch>
           <Route exact path="/">
             <Home />
@@ -49,7 +49,7 @@ function App() {
           <Route exact path="/sign-up">
             <SignUp />
           </Route>
-          <Route exact path="/store">
+          <Route exact path="/login">
             <LogIn />
           </Route>
           <Route exact path="/user-plants">
