@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import "./less/index.less";
+import "./css/login.css"; 
 
 export default function LogIn() {
 
@@ -18,23 +18,25 @@ export default function LogIn() {
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" basSize="large" style={{padding:'20px'},{margin: '0 auto'}}>
-          <FormLabel>Email</FormLabel>
+        <FormGroup className="container" controlId="email" basSize="large">
+          <FormLabel className="title">Email</FormLabel>
           <FormControl 
+          className="block"
           autoFocustype="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <FormLabel>Password</FormLabel>
+        <FormGroup className="container"controlId="password" bsSize="large" >
+          <FormLabel className="title">Password</FormLabel>
           <FormControl
+            className="block"
             value={password}
             onChange={e => setPassword(e.target.value)}
             type="password"
           />
         </FormGroup>
-        <Button block bsSize="large" disabled={!validateForm()} type="submit">
+        <Button className="submit-button" block bsSize="large" disabled={!validateForm()} type="submit">
           Login
         </Button>
       </form>
