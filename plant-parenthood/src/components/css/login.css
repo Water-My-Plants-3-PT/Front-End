@@ -1,0 +1,44 @@
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 10px;
+    display: flex;
+    justify-content: center;
+  };
+
+  .Login form {
+    display: flex;
+    flex-direction: flex-start;
+    margin: 0 auto;
+    max-width: 320px;
+    padding: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+  };
+
+  .form-label {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .submit-button {
+    box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgb(52, 52, 100), 0 2px 4px #452bb8;
+    margin-top: 20px;
+    width: 25%;
+  }
+  .container {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+
+  .block {
+    margin-left: 20px; 
+  }
+};
