@@ -3,6 +3,7 @@
     padding: 60px 10px;
     display: flex;
     justify-content: center;
+    background-color: rgb(151, 170, 187);
   };
 
   .Login form {
