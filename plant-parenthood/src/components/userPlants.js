@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'react-bootstrap';
 import PlantCard from './plantCard';
 import Plant from "./plant.jpg";
-import './userPlants.scss';
+//import './userPlants.scss';
 import Axios from "axios";
 
   var data =[    
