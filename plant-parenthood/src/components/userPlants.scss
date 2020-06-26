@@ -72,11 +72,14 @@
     }
 }
 
-.selected-plant{
+.selected{
     .planCard{
         
         .plantImg{
             border: 2px solid #235B2D;
         }
     }
+}
+.selected-plant{
+    border: 2px solid #235B2D;
 }

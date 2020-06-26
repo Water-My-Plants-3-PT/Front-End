@@ -1,84 +1,103 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import ReactDOM from 'react-dom';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import PlantCard from './plantCard';
 import Plant from "./plant.jpg";
 import './userPlants.scss';
+import Axios from "axios";
 
   var data =[    
   {
     name: "PLANT one",
     img: Plant,
-    id:0
+    plantInfo: false,
+    key:0
   },
   {
     name: "PLANT Two",
     img: Plant,
-    id:1
+    plantInfo: false,
+    key:1
   },
   {
     name: "PLANT Three",
     img: Plant,
-    id:2
+    plantInfo: false,
+    key:2
   },
   {
     name: "PLANT Fours",
     img: Plant,
-    id:3
+    plantInfo: false,
+    key:3
   },
   {
     name: "PLANT Five",
     img: Plant,
-    id:4
-  },
-  {
-    name: "PLANT Six",
-    img: Plant,
-    id:5
-  },
-  {
-    name: "PLANT Seven",
-    img: Plant,
-    id:6
-  },
-  {
-    name: "PLANT Eight",
-    img: Plant,
-    id:7
-  },
-  {
-    name: "PLANT Nine",
-    img: Plant,
-    id:8
-  },
-  {
-    name: "PLANT Ten",
-    img: Plant,
-    id:9
+    plantInfo: false,
+    key:4
   }
 ]
 
 
-var plantInfo = false;
+//var plantInfo = false;
 
-const changePlant =()=>{
-  plantInfo = !plantInfo
-  console.log(`state changed = ${plantInfo}`)
-  if(plantInfo === true){
-    document.body.classList.add('selected-plant')
-  } else{
-    document.body.classList.remove('selected-plant')
-  }
-}
+// const changePlant =()=>{
+//   data.plantInfo = !data.plantInfo
+//   console.log(`state changed = ${data.plantInfo}`)
+//    if(data.plantInfo === true){
+//      document.body.classList.add('selected-plant')
+//    } else{
+//      document.body.classList.remove('selected-plant')
+//    }
+// }
 
+//const [modalIsOpen, setModalIsOpen] = useState(false)
 
 class UserPlants extends React.Component {
-  constructor(props){
-    super(props);
-    this.state ={data}
-};
+    constructor(props){
+      super(props);
+      this.state ={data}
+  };
+
+  componentDidMount() {
+    Axios.get(``)
+      .then(res => {
+        const data = res.data;
+        this.setState({ data });
+      })
+      .catch(err => console.log('Access denied', err.response));
+      
+  }
+
+  changePlant(id) {
+   
+    const slectPlant =data.filter(plant =>{
+      //console.log(plant.key === id)
+      if(plant.key === id){
+        document.getElementById(`plant-${id}`).classList.add('selected-plant');
+        plant.plantInfo = true
+      }
+        
+    })
+
+    //console.log(slectPlant)
+    
+    // data.plantInfo = !data.plantInfo
+    // console.log(`state changed of ${data.name} = ${data.plantInfo}`);
+    //    if(data.plantInfo === true){
+    //      document.body.classList.add('selected-plant')
+    //    } else{
+    //      document.body.classList.remove('selected-plant')
+    //    }
+
+  }
+  //const [modalIsOpen, setModalIsOpen] = useState(false)
 
 
 
   render() {
+    //const [modalIsOpen, setModalIsOpen] = useState(false)
       return (
     <div className="userPlants">
       <section className="userSec">
@@ -97,9 +116,10 @@ class UserPlants extends React.Component {
           {
             this.state.data.map(data =>{
                return(
-                <section className="planCard">
-                <img src={data.img} alt="plant" className="plantImg" onClick={changePlant} />
+                <section className="planCard" key={data.key} onClick={() => this.changePlant(data.key) }>
+                <img src={data.img} alt="plant" id={`plant-${data.key}`} className={"plantImg"}   />
                 <p>{data.name}</p>
+                <PlantCard props={data}/>
                </section>
                );
             })}
