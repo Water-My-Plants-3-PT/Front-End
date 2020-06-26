@@ -60,15 +60,14 @@ class UserPlants extends React.Component {
       this.state ={data}
   };
 
-  componentDidMount() {
-    Axios.get(``)
-      .then(res => {
-        const data = res.data;
-        this.setState({ data });
-      })
-      .catch(err => console.log('Access denied', err.response));
-      
-  }
+  // componentDidMount() {
+  //   Axios.get(``)
+  //     .then(res => {
+  //       const data = res.data;
+  //       this.setState({ data });
+  //     })
+  //     .catch(err => console.log('Access denied', err.response));
+  // }
 
   changePlant(id) {
    
