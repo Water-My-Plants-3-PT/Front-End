@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-// import "./SignUp.css";
+import "./css/login.css";
 
 export default function SignUp() {
 
@@ -14,9 +14,9 @@ export default function SignUp() {
 
   
 
-  // function validateForm() {
-  //   return email.length > 0 && password.length > 0 && password == repeatPassword;
-  // }
+   function validateForm() {
+     return name.length > 0 && password.length > 0 && password == repeatPassword;
+   }
 
   
 
@@ -40,9 +40,10 @@ export default function SignUp() {
   return (
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="name" basSize="large">
-          <FormLabel>Name</FormLabel>
+        <FormGroup className="container" classList="Gblock" controlId="name" basSize="large">
+          <FormLabel className="title" classList="title">Name</FormLabel>
           <FormControl 
+          className="block"
           autoFocustype="name"
           value={name}
           onChange={e => setName(e.target.value)}
@@ -51,6 +52,7 @@ export default function SignUp() {
         {/* <FormGroup controlId="email" basSize="large">
           <FormLabel>Email</FormLabel>
           <FormControl 
+          className="block"
           autoFocustype="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -64,24 +66,26 @@ export default function SignUp() {
           onChange={e => setPhoneNumber(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <FormLabel>Password</FormLabel>
+        <FormGroup className="container" controlId="password" bsSize="large">
+          <FormLabel className="title">Password</FormLabel>
           <FormControl
+            className="block"
             value={password}
             onChange={e => setPassword(e.target.value)}
             type="password"
           />
         </FormGroup>
-        <FormGroup controlId="repeatPassword">
-          <FormLabel>Repeat Password</FormLabel>
+        <FormGroup className="container" controlId="repeatPassword">
+          <FormLabel className="title">Repeat Password</FormLabel>
           <FormControl
+            className="block"
             value={repeatPassword}
             onChange={e => setRepeatPassword(e.target.value)}
             type="Password"
             />
         </FormGroup>
-        <Button block bsSize="large"  type="submit">
-          signUp
+        <Button className="submit-button" block bsSize="large" disabled={!validateForm()} type="submit">
+          Login
         </Button>
       </form>
     </div>

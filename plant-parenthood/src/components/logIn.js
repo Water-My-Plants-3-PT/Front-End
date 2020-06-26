@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import axiosWithAuth from "../utils/axiosWithAuth";
-// import "./Login.css";
+import "./css/login.css";
 
 export default function LogIn() {
 
+  //create initial state for for both entry blocks
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
 
   function validateForm() {
-    return email.length > 0 && password.length > 0;}
+    return username.length > 0 && password.length > 0;}
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -29,6 +30,7 @@ export default function LogIn() {
         {/* <FormGroup controlId="email" basSize="large">
           <FormLabel>Email</FormLabel>
           <FormControl 
+          className="block"
           autoFocustype="email"
           value={email}
           onChange={e => setEmail(e.target.value)}
@@ -42,15 +44,16 @@ export default function LogIn() {
           onChange={e => setUsername(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
-          <FormLabel>Password</FormLabel>
+        <FormGroup className="container"controlId="password" bsSize="large" >
+          <FormLabel className="title">Password</FormLabel>
           <FormControl
+            className="block"
             value={password}
             onChange={e => setPassword(e.target.value)}
             type="password"
           />
         </FormGroup>
-        <Button block bsSize="large"  type="submit">
+        <Button className="submit-button" block bsSize="large" disabled={!validateForm()} type="submit">
           Login
         </Button>
       </form>
