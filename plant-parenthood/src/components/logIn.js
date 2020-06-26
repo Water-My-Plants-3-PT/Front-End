@@ -36,9 +36,10 @@ export default function LogIn() {
           onChange={e => setEmail(e.target.value)}
           />
         </FormGroup> */}
-        <FormGroup controlId="username" basSize="large">
-          <FormLabel>Username</FormLabel>
+        <FormGroup className="container" controlId="username" basSize="large">
+          <FormLabel className="title">Username</FormLabel>
           <FormControl 
+          className="block"
           autoFocustype="email"
           value={username}
           onChange={e => setUsername(e.target.value)}

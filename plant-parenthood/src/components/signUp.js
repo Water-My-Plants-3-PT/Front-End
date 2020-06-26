@@ -58,9 +58,10 @@ export default function SignUp() {
           onChange={e => setEmail(e.target.value)}
           />
         </FormGroup> */}
-        <FormGroup controlId="phoneNumber" basSize="large">
-          <FormLabel>Phone Number</FormLabel>
+        <FormGroup className="container" controlId="phoneNumber" basSize="large">
+          <FormLabel className="title">Phone Number</FormLabel>
           <FormControl 
+          className="block"
           autoFocustype="phoneNumber"
           
           onChange={e => setPhoneNumber(e.target.value)}
