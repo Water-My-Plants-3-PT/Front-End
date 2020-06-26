@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       
       <Router>
-        <nav>
+        <nav className="navbar">
           <section className="sec-1">
             <a>
               <Link to="/" className="link">Home</Link>
