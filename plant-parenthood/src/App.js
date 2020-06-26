@@ -5,6 +5,7 @@ import Home from "./components/home";
 import About from "./components/about";
 import SignUp from "./components/signUp";
 import UserPlants from "./components/userPlants";
+import PrivateRoute from './privateRoute';
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
@@ -52,9 +53,7 @@ function App() {
           <Route exact path="/login">
             <LogIn />
           </Route>
-          <Route exact path="/user-plants">
-            <UserPlants />
-          </Route>
+          <Route exact path="/user-plants" component={UserPlants} />
         </Switch>
       </Router>
     </div>
